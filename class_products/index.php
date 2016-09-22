@@ -3,11 +3,12 @@
 require_once "Product.php";
 require_once "IConn.php";
 require_once "Conn.php";
+require_once "Container.php";
 
-$db = new Conn("mysql:host=localhost;dbname=avancando-oo","root","");
+$db = Container::getConn();
 
-$aparelho = new Product($db);
+$product = Container::getProduct();
 
-$list = $aparelho->list();
+$list = $product->list();
 
 var_dump($list);
