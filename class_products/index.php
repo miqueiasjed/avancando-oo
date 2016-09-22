@@ -1,8 +1,10 @@
 <?php 
 
 require_once "Product.php";
+require_once "IConn.php";
+require_once "Conn.php";
 
-$db = new \PDO("mysql:host=localhost;dbname=avancando-oo","root","");
+$db = new Conn("mysql:host=localhost;dbname=avancando-oo","root","");
 
 $aparelho = new Product($db);
 
