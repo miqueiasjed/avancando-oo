@@ -20,11 +20,22 @@ class ComposerStaticInitf7dc740a7927c394b15a62d90a856c19
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Pimple' => 
+            array (
+                0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitf7dc740a7927c394b15a62d90a856c19::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitf7dc740a7927c394b15a62d90a856c19::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitf7dc740a7927c394b15a62d90a856c19::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

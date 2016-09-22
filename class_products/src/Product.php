@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+namespace Source;
 
 class Product
 {
