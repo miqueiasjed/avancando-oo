@@ -1,25 +1,36 @@
 <?php
-
 namespace Source;
-
-class Product
+class Product implements IProduct
 {
+    private $id;
+    private $nome;
+    private $desc;
 
-	private $db;
-
-	public function __construct(IConn $db)
-	{
-		$this->db = $db->connect(); 
-	}
-
-	public function listar()
-	{
-		$query = "select * from products";
-
-		$stmt = $this->db->prepare($query);
-		$stmt->execute();
-		return $stmt->fetchALL(\PDO::FETCH_ASSOC); 
-
-	}
-
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function setId($id)
+    {
+        $this->id = $id;
+        return $this;
+    }
+    public function getNome()
+    {
+        return $this->nome;
+    }
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+        return $this;
+    }
+    public function getDescricao()
+    {
+        return $this->desc;
+    }
+    public function setDescricao($desc)
+    {
+        $this->desc = $desc;
+        return $this;
+    }
 }
